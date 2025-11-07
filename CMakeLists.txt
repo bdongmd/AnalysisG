@@ -16,7 +16,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g")
 option(BUILD_DOC "Build documentation" OFF)
 find_package(Doxygen)
 
-set(CMAKE_ANALYSISG_CUDA OFF)
+set(CMAKE_ANALYSISG_CUDA ON)
 include(FetchContent)
 include(CheckLanguage)
 set(USE_SABI 1)
@@ -99,4 +99,4 @@ file(INSTALL ${CMAKE_BINARY_DIR}/src/AnalysisG DESTINATION ${PYTHON_SITE_PACKAGE
 #COMMENT "Generating documentation with Doxygen" VERBATIM)
 #else (DOXYGEN_FOUND)
 #message("Doxygen need to be installed to generate the doxygen documentation")
-
+#endif()
