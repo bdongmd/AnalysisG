@@ -33,6 +33,7 @@ cdef extern from "<structs/particles.h>":
         string symbol
         vector[int] lepdef
         vector[int] nudef
+        vector[int] pdgid_pertop
 
         map[string, bool] children
         map[string, bool] parents

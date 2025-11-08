@@ -178,5 +178,6 @@ def entry(smpls, path):
     if "EXP_MC20"  in smpls: entry_point("Fuzzy Matching MC20", "experimental-mc20-" + mode, path + "experimental_mc20/big-" + mode + ".root", "nominal_Loose", True)
     if "SSML_MC20" in smpls: entry_point("Top-CP Toolkit MC20", "top-cp-mc20"              , path + "ssml_mc20/*"                            , "reco"         , True)
     if "BSM_4TOPS" in smpls: entry_point("Ghost Matched MC16", "reference-mc16"            , path + "bsm_4tops/*"                            , "nominal"      , True)
+    if "FM_MC20" in smpls: entry_point("Fuzzy Matching TopCP", "fuzzymatching-topcp-mc20" + mode, path + "fm_mc20/dr/user.bdong.mc23_13p6TeV.601237.PhPy8EG_A14_ttbar_hdamp258p75_allhad.r15530_p6846.root", "reco"      , True)
 
 
