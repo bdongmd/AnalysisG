@@ -30,6 +30,7 @@ struct particle_t {
     std::string hash = "";
     std::string symbol = "";  
 
+    std::vector<int> pdgid_pertop = {};
     std::vector<int> lepdef = {11, 13, 15};
     std::vector<int> nudef  = {12, 14, 16};         
     std::map<std::string, bool> children = {};

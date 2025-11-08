@@ -28,8 +28,44 @@ void particle_template::get_pdgid(int* val, particle_template* prt){
     *val = p -> pdgid;  
 }
 
+void particle_template::set_pdgid_pertop(std::vector<int>* val, particle_template* prt){
+    prt -> data.pdgid_pertop = *val;
+}
+
+
+void particle_template::get_pdgid_pertop(std::vector<int>* val, particle_template* prt) {
+  particle_t* p = &prt->data;
+
+  if (!p->pdgid_pertop.empty()) {
+    *val = p->pdgid_pertop;
+    return;
+  }
+
+  static const std::map<int, std::string> sym = {
+    {1, "d"}, {2, "u"}, {3, "s"},
+    {4, "c"}, {5, "b"}, {6, "t"},
+    {11, "e"}, {12, "$\\nu_{e}$"},
+    {13, "$\\mu$"}, {14, "$\\nu_{\\mu}$"},
+    {15, "$\\tau$"}, {16, "$\\nu_{\\tau}$"},
+    {21, "g"}, {22, "$\\gamma$"}
+  };
+
+  for (const auto& s : p->symbol) {
+    int found_id = 0;
+    for (const auto& kv : sym) {
+      if (kv.second == s) {
+        found_id = kv.first;
+        break;
+      }
+    }
+    p->pdgid_pertop.push_back(found_id);
+  }
+
+  *val = p->pdgid_pertop;
+}
+
 void particle_template::set_symbol(std::string* val, particle_template* prt){
-    prt -> data.symbol = *val;
+  prt -> data.symbol = *val;
 }
 
 void particle_template::get_symbol(std::string* val, particle_template* prt){

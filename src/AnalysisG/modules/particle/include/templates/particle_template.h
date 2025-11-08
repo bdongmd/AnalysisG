@@ -78,11 +78,15 @@ class particle_template : public tools
         void static set_pdgid(int*, particle_template*); 
         void static get_pdgid(int*, particle_template*); 
 
+        cproperty<std::vector<int>, particle_template> pdgid_pertop;
+        void static set_pdgid_pertop(std::vector<int>*, particle_template*);
+        void static get_pdgid_pertop(std::vector<int>*, particle_template*);
+
         cproperty<std::string, particle_template> symbol; 
         void static set_symbol(std::string*, particle_template*); 
         void static get_symbol(std::string*, particle_template*); 
 
-        cproperty<double, particle_template> charge; 
+        cproperty<double, particle_template> charge;
         void static set_charge(double*, particle_template*); 
         void static get_charge(double*, particle_template*); 
 

@@ -35,6 +35,7 @@ class matching: public selection_template
        
         void reference(event_template* ev);
         void experimental(event_template* ev); 
+        void fuzzy(event_template* ev);
         void current(event_template* ev); 
         void dump(
             object_data_t* data, std::vector<particle_template*>* obj, bool is_lepx, bool is_tru,

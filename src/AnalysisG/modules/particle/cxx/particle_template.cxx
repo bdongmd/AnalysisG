@@ -43,6 +43,10 @@ particle_template::particle_template(){
     this -> pdgid.set_getter(this -> get_pdgid); 
     this -> pdgid.set_object(this); 
 
+    this -> pdgid_pertop.set_setter(this -> set_pdgid_pertop);
+    this -> pdgid_pertop.set_getter(this -> get_pdgid_pertop);
+    this -> pdgid_pertop.set_object(this);
+
     this -> symbol.set_setter(this -> set_symbol); 
     this -> symbol.set_getter(this -> get_symbol); 
     this -> symbol.set_object(this); 
